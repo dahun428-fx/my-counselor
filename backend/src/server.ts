@@ -1,0 +1,10 @@
+import app, { logger } from './app';
+import { env } from './config/env';
+
+const PORT = env.PORT;
+
+app.listen(PORT, () => {
+  logger.info(`Server running on http://localhost:${PORT}`);
+  logger.info(`Environment: ${env.NODE_ENV}`);
+  logger.info(`LLM Service: ${env.LLM_SERVICE_URL}`);
+});
